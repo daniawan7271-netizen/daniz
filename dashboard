@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Dashboard 3 — Game & Musik</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="page fade-in">
+  <div class="app-wrap">
+    <header class="header">
+      <div class="h-title">Dashboard • Game & Musik</div>
+      <div class="navs">
+        <div class="icon-btn">ahmad septi awan </div>
+        <button class="icon-btn logout" id="topLogout">Logout</button>
+      </div>
+    </header>
+
+    <section class="two-col">
+      <div class="col-left" style="flex:0 0 48%;">
+        <div class="aspect-square">
+          <div class="fit" style="align-items:center;justify-content:center;">
+            <div style="text-align:center;">
+              <div class="bio-title">Main Game</div>
+              <p class="bio-line">Klik tombol untuk buka CrazyGames</p>
+              <a class="btn-nav" href="https://www.crazygames.com" target="_blank">Main di CrazyGames</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-right" style="flex:0 0 48%;">
+        <div class="aspect-square">
+          <div class="fit" style="padding:6px;">
+            <div class="bio-title">Musik</div>
+            <div style="flex:1;margin-top:8px;">
+              <!-- YouTube embed -->
+              <iframe class="embed-frame" src="https://www.youtube.com/embed/geCTJe_RqnM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="footer-nav">
+      <button class="btn-nav prev" id="toPrev">⬅️ Sebelumnya</button>
+      <button class="btn-nav logout" id="logoutBtn">Logout</button>
+    </div>
+  </div>
+
+<script>
+if (localStorage.getItem('isLoggedIn') !== 'true') location.href = 'index.html';
+
+document.getElementById('toPrev').addEventListener('click', ()=>{
+  document.body.classList.remove('fade-in'); document.body.classList.add('fade-out');
+  setTimeout(()=> location.href='dashboard2.html', 300);
+});
+document.getElementById('logoutBtn').addEventListener('click', ()=>{ localStorage.clear(); location.href='index.html'; });
+document.getElementById('topLogout').addEventListener('click', ()=>{ localStorage.clear(); location.href='index.html'; });
+</script>
+</body>
+</html>
+  
